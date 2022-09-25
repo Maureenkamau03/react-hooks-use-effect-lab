@@ -10,12 +10,12 @@ function Question({ question, onAnswered }) {
 			onAnswered(false);
 			return;
 		}
-		const tId = setTimeout(() => {
+		const timer = setTimeout(() => {
 			setTimeRemaining((timeRemaining) => timeRemaining - 1);
 		}, 1000);
 
 		return function () {
-			clearTimeout(tId);
+			clearTimeout(timer);
 		};
 	}, [timeRemaining, onAnswered]);
 
